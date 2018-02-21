@@ -9,12 +9,20 @@ public class Euler003 {
     private static final long TEST_NUMBER = 600851475143L;
 
     public static void main(String[] args) {
-        Euler003 problem = new Euler003();
-        List<Long> result = problem.factorize(TEST_NUMBER);
+        /* Return the answer to project euler #3
+         */
+
+        List<Long> result = factorize(TEST_NUMBER);
         System.out.println(Collections.max(result));
     }
 
-    private List<Long> factorize(long num) {
+    private static List<Long> factorize(long num) {
+        /* Factorize number
+         *
+         * @param   num the number to factor
+         * @return  factors of num as List
+         */
+
         List<Long> result = new ArrayList<>();
 
         for (long i=2; i<Math.sqrt(num); ++i) {
@@ -29,7 +37,12 @@ public class Euler003 {
         return result;
     }
 
-    private boolean isPrime(long num) {
+    private static boolean isPrime(long num) {
+        /* Test if number is prime
+         * @param   num number on which to test primality
+         * @result  true if num is prime else false
+         */
+
         if (num <= 1) {
             return false;
         }

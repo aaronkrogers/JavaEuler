@@ -22,7 +22,7 @@ public class Euler004 {
         System.out.println(result);
     }
 
-    public static boolean isPalindrome(int num) {
+    private static boolean isPalindrome(int num) {
         int n = num;
         int rev = 0;
         int dig;
