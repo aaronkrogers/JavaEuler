@@ -1,13 +1,5 @@
-package euler;
+package javaeuler.euler;
 
-
-import sun.nio.cs.UTF_32;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class Euler003 {

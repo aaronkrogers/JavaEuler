@@ -1,4 +1,4 @@
-package euler;
+package javaeuler.euler;
 
 public class Euler006 {
     /* Find the difference between the sum of the squares of the first

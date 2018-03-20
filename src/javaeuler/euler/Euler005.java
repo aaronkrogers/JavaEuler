@@ -1,4 +1,4 @@
-package euler;
+package javaeuler.euler;
 
 public class Euler005 {
     /* 2520 is the smallest number that can be divided by

@@ -1,4 +1,4 @@
-package euler;
+package javaeuler.euler;
 
 
 public class Euler004 {

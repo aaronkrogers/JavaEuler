@@ -1,4 +1,4 @@
-package euler;
+package javaeuler.euler;
 
 import java.util.HashSet;
 import java.util.Set;
