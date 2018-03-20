@@ -19,7 +19,7 @@ public class Euler005 {
         System.out.println(lcm(numbers));
     }
 
-    public static int lcm(int[] numbers) {
+    static int lcm(int[] numbers) {
         int result = 1;
         for (int num : numbers) {
             result = lcm(result, num);
@@ -27,7 +27,7 @@ public class Euler005 {
         return result;
     }
 
-    public static int lcm(int x, int y) {
+    static int lcm(int x, int y) {
         if (y < x) {
             int t = x;
             x = y;
