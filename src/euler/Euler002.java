@@ -1,3 +1,5 @@
+package euler;
+
 public class Euler002 {
     private int thisI = 1;
     private int lastI = 0;

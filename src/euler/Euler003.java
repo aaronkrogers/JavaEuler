@@ -1,11 +1,20 @@
-/* Largest Prime Factor
- * The prime factors of 13195 are 5, 7, 13 and 29
- * What is the largest prime factor of the number 600851475143?
- */
+package euler;
 
+
+import sun.nio.cs.UTF_32;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Euler003 {
+    /* Largest Prime Factor
+     * The prime factors of 13195 are 5, 7, 13 and 29
+     * What is the largest prime factor of the number 600851475143?
+     */
     private static final long TEST_NUMBER = 600851475143L;
 
     public static void main(String[] args) {
