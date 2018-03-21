@@ -16,6 +16,4 @@ public class Euler006 {
         output = (int) Math.pow(numberSum, 2) - squareSum;
         System.out.println(output);
     }
-
-
 }

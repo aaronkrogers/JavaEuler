@@ -10,6 +10,6 @@ public class Primes {
             primeGen.next();
         }
 
-        return primeGen.next();
+        return (int) primeGen.next();
     }
 }
