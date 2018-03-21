@@ -8,7 +8,7 @@ public class PrimeGen implements Generator {
     private List<Integer> pastPrimes = new ArrayList<>();
 
     @Override
-    public int next() {
+    public Integer next() {
         pastPrimes.add(nextPrime);
 
         for (int np = nextPrime ;; ++np) {

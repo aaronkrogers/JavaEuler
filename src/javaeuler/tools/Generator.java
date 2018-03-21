@@ -1,5 +1,5 @@
 package javaeuler.tools;
 
-public interface Generator {
-    int next();
+interface Generator<T> {
+    T next();
 }
