@@ -1,49 +1,27 @@
 package javaeuler.euler;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import javaeuler.tools.FileReader;
 
 public class Euler008 {
-    private static final String FILENAME = "src/resources/Euler008.txt";
-
     public static void main(String[] args) {
-        String line;
-        StringBuilder contents = new StringBuilder();
-        try {
-            FileReader fileReader = new FileReader(FILENAME);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while ((line = bufferedReader.readLine()) != null) {
-                contents.append(line);
-
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        } catch (IOException e) {
-            System.out.println("File IO Error");
-        }
-
-        List<String> substrings = new ArrayList<>();
-        for (int i=0; i + 13 < contents.length(); i++) {
-            substrings.add(contents.substring(i, i+13));
-        }
-
-        System.out.println(largestProduct(substrings));
-    }
-
-    private static long largestProduct(List substrings) {
+        FileReader fileReader= new FileReader("src/resources/Euler008.txt");
+        String fileContents = fileReader.toString();
         long result = 0;
-        for (Object substring : substrings) {
-            long mulResult = mul((String) substring);
+        long mulResult;
+
+        // iterate through file contents by each 13-length substring
+        // and for each substring get the multiplication of all it's
+        // digits and compare them against the last largest result
+        // and overwriting the last result with the new result if
+        // the new result is larger
+        for (int i=0; i + 13 < fileContents.length(); i++) {
+            mulResult = mul(fileContents.substring(i, i+13));
             if (mulResult > result) {
                 result = mulResult;
             }
         }
-        return result;
+
+        System.out.println(result);
     }
 
     private static long mul(String substring) {
