@@ -4,7 +4,7 @@ import javaeuler.tools.FileReader;
 
 public class Euler008 {
     public static void main(String[] args) {
-        FileReader fileReader= new FileReader("src/resources/Euler008.txt");
+        FileReader fileReader= new FileReader("resources/Euler008.txt");
         String fileContents = fileReader.toString();
         long result = 0;
         long mulResult;

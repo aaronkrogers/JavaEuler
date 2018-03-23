@@ -1,5 +1,6 @@
 package javaeuler.euler;
 
+import io.herrmann.generator.Generator;
 import javaeuler.tools.EulerProblem;
 import javaeuler.tools.PrimeGen;
 
@@ -17,7 +18,7 @@ public class Euler010 implements EulerProblem {
 
     public long getSolution() {
         Long result = 0L;
-        PrimeGen primeGen = new PrimeGen();
+        Generator<Integer> primeGen = new PrimeGen();
         for (int prime : primeGen) {
             if (prime >= LIMIT) {
                 break;
