@@ -28,6 +28,7 @@ public class PrimeGen extends Generator<Integer> {
                     break;
                 }
             }
+            // javeee
             if (testPassed) {
                 nextPrime = pastPrimes.get(pastPrimes.size() - 1);
                 pastPrimes.add(testPrime);

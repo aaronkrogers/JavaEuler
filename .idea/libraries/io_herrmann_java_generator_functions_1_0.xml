@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="io.herrmann:java-generator-functions:1.0" type="repository">
+    <properties maven-id="io.herrmann:java-generator-functions:1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/java-generator-functions-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
