@@ -1,5 +1,5 @@
 package javaeuler.tools;
 
 public interface EulerProblem {
-    long solve();
+    long getSolution();
 }

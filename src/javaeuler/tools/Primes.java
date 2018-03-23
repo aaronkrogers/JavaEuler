@@ -1,39 +1,46 @@
 package javaeuler.tools;
 
+import io.herrmann.generator.Generator;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Primes {
     public static int getNthPrime(long n) {
         assert (n > 0);
+        int result = 0;
 
-        PrimeGen primeGen = new PrimeGen();
+        Generator<Integer> primeGen = new PrimeGen();
 
-        for (int np = 1; np < n; np++) {
-            primeGen.nextPrime();
+        int np = 0;
+        for (int prime : primeGen) {
+            np++;
+            if (np == n) {
+                result = prime;
+                break;
+            }
         }
-
-        return primeGen.nextPrime();
+        return result;
     }
 
-    public static List<Long> factorize(long num) {
+
+    public static List<Integer> factorize(long num) {
         /* Factorize number
          *
          * @param   num the number to factor
          * @return  factors of num as List
          */
 
-        List<Long> result = new ArrayList<>();
-        PrimeGen primeGen = new PrimeGen();
+        List<Integer> result = new ArrayList<>();
+        Generator<Integer> primeGen = new PrimeGen();
 
-        long prime;
-
-        while ((prime = primeGen.nextPrime()) <= num) {
+        for (int prime : primeGen) {
+            if (num == 1) {break;}
             while (num % prime == 0) {
                 num /= prime;
                 result.add(prime);
             }
         }
+
         return result;
     }
 
@@ -47,10 +54,12 @@ public class Primes {
             return false;
         }
 
-        PrimeGen primeGen = new PrimeGen();
-        int nextPrime;
-        while ((nextPrime = primeGen.nextPrime()) < num/2) {
-            if (num % nextPrime == 0) {
+        Generator<Integer> primeGen = new PrimeGen();
+        for (int prime : primeGen) {
+            if (prime >= num/2) {
+                break;
+            }
+            if (num % prime == 0) {
                 return false;
             }
         }

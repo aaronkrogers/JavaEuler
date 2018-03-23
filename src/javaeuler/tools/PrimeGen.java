@@ -1,17 +1,19 @@
 package javaeuler.tools;
 
+import io.herrmann.generator.Generator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrimeGen {
+public class PrimeGen extends Generator<Integer> {
     private List<Integer> pastPrimes = new ArrayList<>();
 
     public PrimeGen() {
         pastPrimes.add(2);
     }
 
-    public Integer nextPrime() {
-        Integer result = 0;
+    @Override
+    public void run() throws InterruptedException {
+        int nextPrime;
         int testPrime = pastPrimes.get(pastPrimes.size() - 1);
         while (++testPrime > 0) {
             boolean testPassed = true;
@@ -27,11 +29,10 @@ public class PrimeGen {
                 }
             }
             if (testPassed) {
-                result = pastPrimes.get(pastPrimes.size() - 1);
+                nextPrime = pastPrimes.get(pastPrimes.size() - 1);
                 pastPrimes.add(testPrime);
-                return result;
+                yield(nextPrime);
             }
         }
-        return result;
     }
 }
