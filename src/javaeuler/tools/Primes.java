@@ -1,29 +1,23 @@
 package javaeuler.tools;
 
-import io.herrmann.generator.Generator;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Primes {
-    public static int getNthPrime(long n) {
+    public static long getNthPrime(long n) {
         assert (n > 0);
-        int result = 0;
 
-        Generator<Integer> primeGen = new PrimeGen();
+        PrimeGen primeGen = new PrimeGen();
 
         int np = 0;
-        for (int prime : primeGen) {
-            np++;
-            if (np == n) {
-                result = prime;
-                break;
-            }
+        Long prime = 0L;
+        while (np++ < n) {
+            prime = primeGen.nextPrime();
         }
-        return result;
+        return prime;
     }
 
 
-    public static List<Integer> factorize(long num) {
+    public static List<Integer> getFactors(long num) {
         /* Factorize number
          *
          * @param   num the number to factor
@@ -31,10 +25,11 @@ public class Primes {
          */
 
         List<Integer> result = new ArrayList<>();
-        Generator<Integer> primeGen = new PrimeGen();
+        PrimeGen primeGen = new PrimeGen();
+        int prime;
 
-        for (int prime : primeGen) {
-            if (num == 1) {break;}
+        while (num > 1) {
+            prime = (int) primeGen.nextPrime();
             while (num % prime == 0) {
                 num /= prime;
                 result.add(prime);
@@ -44,25 +39,14 @@ public class Primes {
         return result;
     }
 
-    public static boolean isPrime(long num) {
-        /* Test if number is prime
-         * @param   num number on which to test primality
-         * @result  true if num is prime else false
-         */
-        assert (num > 0);
-        if ((num == 1) || (num == 2)) {
-            return false;
-        }
+    public static int getDivisorCount(long num) {
+        int result = 1;
 
-        Generator<Integer> primeGen = new PrimeGen();
-        for (int prime : primeGen) {
-            if (prime >= num/2) {
-                break;
-            }
-            if (num % prime == 0) {
-                return false;
-            }
+        List<Integer> factors = getFactors(num);
+        for (Integer factor : new HashSet<>(factors)) {
+            int frequency = Collections.frequency(factors, factor);
+            result *= (frequency + 1);
         }
-        return true;
+        return result;
     }
 }

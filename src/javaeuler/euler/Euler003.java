@@ -19,7 +19,7 @@ public class Euler003 implements EulerProblem {
     }
 
     public long getSolution() {
-        List<Integer> result = Primes.factorize(TEST_NUMBER);
+        List<Integer> result = Primes.getFactors(TEST_NUMBER);
         return Collections.max(result);
     }
 }

@@ -1,14 +1,12 @@
 package javaeuler.tools;
 
-import io.herrmann.generator.Generator;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class FileReader extends Generator<String> {
+public class FileReader {
     private String fileName;
-    private String fileContents;
+    public String[] lines;
 
     public FileReader(String fileName) {
         this.fileName = fileName;
@@ -35,18 +33,6 @@ public class FileReader extends Generator<String> {
             System.out.println("File IO Error");
         }
 
-        this.fileContents = fileContents.toString();
-    }
-
-    public String toString() {
-        return fileContents;
-    }
-
-    @Override
-    public void run() throws InterruptedException {
-        String[] file = fileContents.split("[\r\n]");
-        for (String line : file) {
-            yield(line);
-        }
+        this.lines = fileContents.toString().split("[\r\n]");
     }
 }
