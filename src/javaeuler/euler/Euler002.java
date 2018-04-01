@@ -2,7 +2,7 @@ package javaeuler.euler;
 
 import javaeuler.tools.EulerProblem;
 
-public class Euler002 implements EulerProblem {
+public class Euler002 extends EulerProblem {
     private int thisI = 1;
     private int lastI = 0;
 

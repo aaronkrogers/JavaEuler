@@ -4,7 +4,7 @@ import javaeuler.tools.EulerProblem;
 import javaeuler.tools.Primes;
 import java.util.*;
 
-public class Euler003 implements EulerProblem {
+public class Euler003 extends EulerProblem {
     /* Largest Prime Factor
      * The prime factors of 13195 are 5, 7, 13 and 29
      * What is the largest prime factor of the number 600851475143?

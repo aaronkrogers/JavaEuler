@@ -5,7 +5,7 @@ import javaeuler.tools.EulerProblem;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Euler001 implements EulerProblem {
+public class Euler001 extends EulerProblem {
     /* Multiples of 3 and 5
     If we list all the natural numbers below 10 that
     are multiples of 3 or 5, we get 3, 5, 6 and 9.

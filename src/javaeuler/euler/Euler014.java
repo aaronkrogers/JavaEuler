@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Euler014 implements EulerProblem{
+public class Euler014 extends EulerProblem{
     /* Longest Collatz sequence
 
     The following iterative sequence is defined for the set of positive integers:

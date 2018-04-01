@@ -3,7 +3,7 @@ package javaeuler.euler;
 import javaeuler.tools.EulerProblem;
 import javaeuler.tools.PrimeGen;
 
-public class Euler010 implements EulerProblem {
+public class Euler010 extends EulerProblem {
     /* Summation of primes
     The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
     Find the sum of all the primes below two million.

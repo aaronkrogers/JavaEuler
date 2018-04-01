@@ -2,13 +2,15 @@ package javaeuler.tools;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReader {
-    private String fileName;
-    public String[] lines;
+public class EulerReader {
+    public final String fileName;
+    private String fileContents;
+    private String[] lines;
 
-    public FileReader(String fileName) {
+    public EulerReader(String fileName) {
         this.fileName = fileName;
         init();
     }
@@ -19,7 +21,7 @@ public class FileReader {
         StringBuilder fileContents = new StringBuilder();
 
         try {
-            java.io.FileReader fileReader = new java.io.FileReader(this.fileName);
+            FileReader fileReader = new FileReader(this.fileName);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -33,6 +35,20 @@ public class FileReader {
             System.out.println("File IO Error");
         }
 
+        this.fileContents = fileContents.toString();
         this.lines = fileContents.toString().split("[\r\n]");
+    }
+
+    public String read() {
+        return fileContents;
+    }
+
+    public String[] readLines() {
+        return lines;
+    }
+
+    @Override
+    public String toString() {
+        return fileContents;
     }
 }

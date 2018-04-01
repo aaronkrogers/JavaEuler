@@ -1,5 +1,5 @@
 package javaeuler.tools;
 
-public interface EulerProblem {
-    long getSolution();
+public abstract class EulerProblem {
+    abstract public long getSolution();
 }
