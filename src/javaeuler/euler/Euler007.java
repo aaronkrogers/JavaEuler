@@ -1,6 +1,6 @@
 package javaeuler.euler;
 
-import javaeuler.tools.primes.PrimeTools;
+import javaeuler.tools.PrimeTools;
 
 public class Euler007 {
     public static void main(String[] args) {

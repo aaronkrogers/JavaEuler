@@ -1,7 +1,7 @@
 package javaeuler.euler;
 
 import javaeuler.tools.EulerProblem;
-import javaeuler.tools.primes.PrimeTools;
+import javaeuler.tools.MathTools;
 
 public class Euler012 extends EulerProblem{
     /* Highly divisible triangle numbers
@@ -39,7 +39,7 @@ public class Euler012 extends EulerProblem{
         while (divisorCount <= 500) {
             nextNum ++;
             triangleNumber += nextNum;
-            divisorCount = PrimeTools.getDivisorCount(triangleNumber);
+            divisorCount = MathTools.divisorCount(triangleNumber);
         }
         return triangleNumber;
     }

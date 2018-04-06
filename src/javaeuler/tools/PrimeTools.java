@@ -1,4 +1,6 @@
-package javaeuler.tools.primes;
+package javaeuler.tools;
+
+import javaeuler.tools.PrimeGen;
 
 import java.util.*;
 
@@ -38,18 +40,6 @@ public class PrimeTools {
             }
         }
 
-        return result;
-    }
-
-    public static int getDivisorCount(long num) {
-        int result = 1;
-
-        List<Long> factors = getFactors(num);
-
-        for (long factor : new HashSet<>(factors)) {
-            int frequency = Collections.frequency(factors, factor);
-            result *= (frequency + 1);
-        }
         return result;
     }
 }

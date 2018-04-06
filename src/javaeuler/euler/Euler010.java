@@ -1,7 +1,7 @@
 package javaeuler.euler;
 
 import javaeuler.tools.EulerProblem;
-import javaeuler.tools.primes.PrimeGen;
+import javaeuler.tools.PrimeGen;
 
 public class Euler010 extends EulerProblem {
     /* Summation of primes

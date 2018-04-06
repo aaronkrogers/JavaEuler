@@ -1,7 +1,7 @@
 package javaeuler.euler;
 
 import javaeuler.tools.EulerProblem;
-import javaeuler.tools.primes.PrimeTools;
+import javaeuler.tools.PrimeTools;
 import java.util.*;
 
 public class Euler003 extends EulerProblem {
