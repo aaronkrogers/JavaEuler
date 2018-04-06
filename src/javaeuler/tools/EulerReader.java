@@ -6,12 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class EulerReader {
-    public final String fileName;
+    private final String FILENAME;
     private String fileContents;
     private String[] lines;
 
     public EulerReader(String fileName) {
-        this.fileName = fileName;
+        this.FILENAME = fileName;
         init();
     }
 
@@ -21,7 +21,7 @@ public class EulerReader {
         StringBuilder fileContents = new StringBuilder();
 
         try {
-            FileReader fileReader = new FileReader(this.fileName);
+            FileReader fileReader = new FileReader(this.FILENAME);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -45,6 +45,10 @@ public class EulerReader {
 
     public String[] readLines() {
         return lines;
+    }
+
+    public String readLine(int line) {
+        return lines[line];
     }
 
     @Override

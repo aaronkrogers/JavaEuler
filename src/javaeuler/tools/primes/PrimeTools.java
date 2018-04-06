@@ -1,35 +1,37 @@
-package javaeuler.tools;
+package javaeuler.tools.primes;
 
 import java.util.*;
 
-public class Primes {
-    public static long getNthPrime(long n) {
-        assert (n > 0);
-
-        PrimeGen primeGen = new PrimeGen();
-
-        int np = 0;
-        Long prime = 0L;
-        while (np++ < n) {
-            prime = primeGen.nextPrime();
+public class PrimeTools {
+    public static long getNthPrime(int n) {
+        if (!(n > 0)) {
+            throw new IllegalArgumentException();
         }
-        return prime;
+
+        long result = 0;
+        PrimeGen primeGen = (PrimeGen) PrimeGen.nPrimes(n);
+
+        for (long prime : primeGen) {
+            result = prime;
+        }
+
+        return result;
     }
 
 
-    public static List<Integer> getFactors(long num) {
+    public static List<Long> getFactors(long num) {
         /* Factorize number
          *
          * @param   num the number to factor
          * @return  factors of num as List
          */
 
-        List<Integer> result = new ArrayList<>();
+        List<Long> result = new ArrayList<>();
         PrimeGen primeGen = new PrimeGen();
-        int prime;
 
+        long prime;
         while (num > 1) {
-            prime = (int) primeGen.nextPrime();
+            prime = primeGen.next().intValue();
             while (num % prime == 0) {
                 num /= prime;
                 result.add(prime);
@@ -42,8 +44,9 @@ public class Primes {
     public static int getDivisorCount(long num) {
         int result = 1;
 
-        List<Integer> factors = getFactors(num);
-        for (Integer factor : new HashSet<>(factors)) {
+        List<Long> factors = getFactors(num);
+
+        for (long factor : new HashSet<>(factors)) {
             int frequency = Collections.frequency(factors, factor);
             result *= (frequency + 1);
         }

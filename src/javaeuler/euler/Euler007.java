@@ -1,9 +1,9 @@
 package javaeuler.euler;
 
-import javaeuler.tools.Primes;
+import javaeuler.tools.primes.PrimeTools;
 
 public class Euler007 {
     public static void main(String[] args) {
-        System.out.println(Primes.getNthPrime(10001));
+        System.out.println(PrimeTools.getNthPrime(10001));
     }
 }

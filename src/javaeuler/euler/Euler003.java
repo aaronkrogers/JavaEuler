@@ -1,7 +1,7 @@
 package javaeuler.euler;
 
 import javaeuler.tools.EulerProblem;
-import javaeuler.tools.Primes;
+import javaeuler.tools.primes.PrimeTools;
 import java.util.*;
 
 public class Euler003 extends EulerProblem {
@@ -19,7 +19,7 @@ public class Euler003 extends EulerProblem {
     }
 
     public long getSolution() {
-        List<Integer> result = Primes.getFactors(TEST_NUMBER);
+        List<Long> result = PrimeTools.getFactors(TEST_NUMBER);
         return Collections.max(result);
     }
 }
