@@ -4,7 +4,7 @@ import javaeuler.tools.EulerProblem;
 
 import java.math.BigInteger;
 
-public class Euler019 extends EulerProblem {
+public class Euler020 extends EulerProblem {
     /* Factorial Digit Sum
     n! means n × (n − 1) × ... × 3 × 2 × 1
 
@@ -15,7 +15,7 @@ public class Euler019 extends EulerProblem {
      */
 
     public static void main(String[] args) {
-        EulerProblem problem = new Euler019();
+        EulerProblem problem = new Euler020();
         System.out.println(problem.getSolution());
     }
 
