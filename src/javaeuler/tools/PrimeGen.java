@@ -45,15 +45,14 @@ public class PrimeGen implements Iterator<Long>, Iterable<Long>{
     @Override
     public Long next() {
         long nextPrime;
-        long testPrime = pastPrimes.get(pastPrimes.size() - 1);
+        long testPrime;
 
-        boolean done = false;
-        while (!done) {
-            testPrime += 1;
+        Loop:
+        for (testPrime = pastPrimes.get(pastPrimes.size() - 1) + 1;;
+             testPrime++) {
             for (long prime : pastPrimes) {
                 if (prime > Math.sqrt(testPrime)) {
-                    done = true;
-                    break;
+                    break Loop;
                 }
 
                 if (testPrime % prime == 0) {
@@ -61,6 +60,7 @@ public class PrimeGen implements Iterator<Long>, Iterable<Long>{
                 }
             }
         }
+
         nextPrime = pastPrimes.get(pastPrimes.size() - 1);
         pastPrimes.add(testPrime);
         this.nextPrime = testPrime;
